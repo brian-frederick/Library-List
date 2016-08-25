@@ -10,8 +10,7 @@ namespace Library_List
     {
         static void Main(string[] args)
         {
-
-            int choice;
+            int choice; //initializing menu choice variable
 
             Console.WriteLine("Hello!");
             
@@ -25,8 +24,10 @@ namespace Library_List
                                   "\n Press 5 to Exit" +
                                   "\n");
 
+                //getting user choice
                 bool number = Int32.TryParse(Console.ReadLine(), out choice);
 
+                //adds book
                 if (choice == 1)
                 {
                     Console.Clear();
@@ -40,6 +41,7 @@ namespace Library_List
                     Console.WriteLine("Adding " + name + " by " + author + ". What's next?");
                 }
 
+                //list books
                 else if (choice == 2)
                 {
                     Console.Clear();
@@ -48,6 +50,7 @@ namespace Library_List
                     Console.WriteLine("What's next?");
                 }
 
+                //saves list to xml
                 else if (choice == 3)
                 {
                     Console.Clear();
@@ -58,6 +61,7 @@ namespace Library_List
                     Console.WriteLine("File Saved to " + filename + ". Press Enter for Menu.");
                 }
 
+                //retrieves list from xml
                 else if (choice == 4)
                 {
                     Console.Clear();
@@ -68,12 +72,14 @@ namespace Library_List
                     Console.WriteLine("List retrieved. What's next?");
                  }
 
+                //exits
                 else if (choice == 5)
                 {
                     Console.WriteLine("\nThanks for coming to the library. So long.");
                     System.Threading.Thread.Sleep(2500);
-                    break;
                 }
+
+                //default for numbers not in range
                 else
                 {
                     Console.WriteLine("Valid choices are numbers 1 - 5. Try again.");
